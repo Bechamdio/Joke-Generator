@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Generator - Laugh Out Loud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>😂 Joke Generator</h1>
+                <p class="subtitle">Get a laugh with random jokes from around the web</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Joke Display Card -->
+            <div class="joke-card">
+                <div class="joke-container">
+                    <div id="joke-display" class="joke-text">
+                        <p>Click "Get Joke" to start laughing! 🎉</p>
+                    </div>
+                    <div id="joke-type" class="joke-type">Ready for a joke?</div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="controls">
+                <button id="get-joke-btn" class="btn btn-primary">
+                    <span class="btn-icon">🎲</span>
+                    Get Joke
+                </button>
+                <button id="copy-btn" class="btn btn-secondary" title="Copy joke to clipboard">
+                    <span class="btn-icon">📋</span>
+                    Copy
+                </button>
+                <button id="share-btn" class="btn btn-secondary" title="Share joke">
+                    <span class="btn-icon">📤</span>
+                    Share
+                </button>
+            </div>
+
+            <!-- Joke Type Selector -->
+            <div class="options-panel">
+                <h3>Joke Type</h3>
+                <div class="joke-types">
+                    <label class="radio-option">
+                        <input type="radio" name="joke-type" value="general" checked>
+                        <span>General</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="joke-type" value="programming">
+                        <span>Programming</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="joke-type" value="knock-knock">
+                        <span>Knock-Knock</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="joke-type" value="dad">
+                        <span>Dad Jokes</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Favorites Section -->
+            <div class="favorites-panel">
+                <div class="favorites-header">
+                    <h3>⭐ Favorite Jokes</h3>
+                    <button id="clear-favorites-btn" class="btn btn-small" title="Clear all favorites">
+                        Clear
+                    </button>
+                </div>
+                <div id="favorites-list" class="favorites-list">
+                    <p class="empty-message">No favorites yet. Click the ❤️ to save jokes!</p>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="stats-panel">
+                <h3>Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="jokes-count">0</div>
+                        <div class="stat-label">Jokes Loaded</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="favorites-count">0</div>
+                        <div class="stat-label">Favorites</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="api-status">Ready</div>
+                        <div class="stat-label">API Status</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Joke Generator v1.0 | Powered by multiple joke APIs | Made with ❤️</p>
+        </footer>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Loading a hilarious joke...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="api.js"></script>
+    <script src="ui.js"></script>
+    <script src="storage.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
